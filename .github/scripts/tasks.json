@@ -1,0 +1,120 @@
+{
+  "tasks": [
+    {
+      "type": "parent",
+      "title": "Backend Infrastructure: RPC Compatibility and Data Structures",
+      "description": "Prepare the Go backend to handle the new network protocol and data structures for VAR and SKA tokens. Ensure the explorer can communicate with the updated node RPC [1-3].",
+      "labels": "enhancement",
+      "assignee": "edwshav"
+    },
+    {
+      "type": "sub-issue",
+      "title": "Implement RPC Compatibility for New Network",
+      "description": "Update the Go code in the rpcutils and dcrdata packages to handle the new RPC protocol and network properties, ensuring all block and transaction structures are compatible [1, 2, 4].",
+      "labels": "enhancement",
+      "assignee": "edwshav",
+      "parent": 0
+    },
+    {
+      "type": "sub-issue",
+      "title": "Define Go Structures for 13-Column Table",
+      "description": "Define internal Go structures in dbtypes and explorer/types to support the 13 columns required for the main page: Overview (7), VAR (3), and SKA (3) [5, 6].",
+      "labels": "enhancement",
+      "assignee": "edwshav",
+      "parent": 0
+    },
+    {
+      "type": "sub-issue",
+      "title": "Develop Mock Data Provider",
+      "description": "Create a mock data provider that returns hardcoded block data with VAR and SKA tokens to allow frontend development while the database sync is in progress [3].",
+      "labels": "enhancement",
+      "assignee": "edwshav",
+      "parent": 0
+    },
+    {
+      "type": "parent",
+      "title": "Main Page UI: Block List Table Update",
+      "description": "Update the main page block list to display 13 columns across three sections: Overview, VAR, and SKA. Ensure the layout remains responsive [5, 7, 8].",
+      "labels": "enhancement",
+      "assignee": "edshav"
+    },
+    {
+      "type": "sub-issue",
+      "title": "Modify Templates for 13-Column Layout",
+      "description": "Update home.tmpl and related view files to include the 13 required columns. Group them under visual headers or color-coded sections for Overview, VAR, and SKA [6].",
+      "labels": "enhancement",
+      "assignee": "edshav",
+      "parent": 4
+    },
+    {
+      "type": "sub-issue",
+      "title": "Implement SKA Precision Logic",
+      "description": "Configure the template logic to display SKA coin amounts with a maximum of 2 decimal places on the main page for space optimization [8].",
+      "labels": "enhancement",
+      "assignee": "edshav",
+      "parent": 4
+    },
+    {
+      "type": "parent",
+      "title": "Interactive SKA Details (Accordion)",
+      "description": "Implement an interactive accordion that expands when clicking SKA numbers to show a breakdown of individual SKA token types (SKA1, SKA2, etc.) [9-12].",
+      "labels": "enhancement",
+      "assignee": "edshav"
+    },
+    {
+      "type": "sub-issue",
+      "title": "Develop Stimulus Controller for SKA Expansion",
+      "description": "Create a Stimulus controller to handle click events on SKA Transactions, Sum, or Size cells. Manage row visibility and toggle icons [11, 13, 14].",
+      "labels": "enhancement",
+      "assignee": "edshav",
+      "parent": 7
+    },
+    {
+      "type": "sub-issue",
+      "title": "Implement Turbo Streams for Dynamic Loading",
+      "description": "Set up a backend endpoint and frontend handling to 'push' additional rows containing SKA1/SKA2 details into the DOM using Turbo Streams when the row is expanded [15, 16].",
+      "labels": "enhancement",
+      "assignee": "edwshav",
+      "parent": 7
+    },
+    {
+      "type": "sub-issue",
+      "title": "Style Expanded Detail Rows",
+      "description": "Add CSS for expanded rows to distinguish them from primary blocks (e.g., different fonts, indentation, and removing block height numbers) [17].",
+      "labels": "enhancement",
+      "assignee": "edshav",
+      "parent": 7
+    },
+    {
+      "type": "parent",
+      "title": "Global UI Enhancements and Clean-up",
+      "description": "Update secondary widgets and cleanup unused UI components as per Monetarium requirements [18, 19].",
+      "labels": "enhancement",
+      "assignee": "edshav"
+    },
+    {
+      "type": "sub-issue",
+      "title": "Update Coin Supply Widget",
+      "description": "Rename 'Distribution' to 'Coin Supply'. Add VAR circulation percentage and detailed SKA supply info (Issued, Withdrawn, Circulating) [18, 19].",
+      "labels": "enhancement",
+      "assignee": "edshav",
+      "parent": 11
+    },
+    {
+      "type": "sub-issue",
+      "title": "Hide Placeholder Sections",
+      "description": "Temporarily hide the Treasury and Exchange Rate sections on the main page as they are not currently implemented [18].",
+      "labels": "enhancement",
+      "assignee": "edshav",
+      "parent": 11
+    },
+    {
+      "type": "sub-issue",
+      "title": "Add SKA Indicators to Mempool",
+      "description": "Update the Mempool table to show SKA transactions with colored bracket indicators for different SKA types [19, 20].",
+      "labels": "enhancement",
+      "assignee": "edshav",
+      "parent": 11
+    }
+  ]
+}
